@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+char *getmonth( int n );
+
+int main()
+{
+    int n;
+    char *s;
+
+    scanf("%d", &n);
+    s = getmonth(n);
+    if ( s==NULL ) printf("wrong input!\n");
+    else printf("%s\n", s);
+
+    return 0;
+}
+char *getmonth( int n )
+{
+    char *month;
+    char **mon;
+    int i;
+    mon=(char **)malloc(12*sizeof(char *));
+    mon[0]=(char *)malloc(12*10*sizeof(char));
+    for(i=1;i<12;i++)
+        mon[i]=mon[0]+i*10;
+    strcpy(mon[0],"January");
+    strcpy(mon[1],"February");
+    strcpy(mon[2],"March");
+    strcpy(mon[3],"April");
+    strcpy(mon[4],"May");
+    strcpy(mon[5],"June");
+    strcpy(mon[6],"July");
+    strcpy(mon[7],"August");
+    strcpy(mon[8],"September");
+    strcpy(mon[9],"October");
+    strcpy(mon[10],"November");
+    strcpy(mon[11],"December");
+    month=NULL;
+    if(n<=0||n>12)
+        return month;
+    month=mon[n-1];
+
+    return month;
+}
