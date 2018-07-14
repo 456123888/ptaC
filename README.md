@@ -8,7 +8,7 @@ int main ()
     {
         for(i=2;i<=k;i++)
         {
-            for(g=2;g<=sqrt(i);g++)//判断素数时用sqrt(i)别用i/2。//
+            for(g=2;g<=sqrt(i);g++)//判断素数时用sqrt(i)别用i/2。不然运行量比较大，可能会超时//
             {
                 if(i%g==0)
                     break;
